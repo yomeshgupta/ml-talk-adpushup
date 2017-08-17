@@ -37,6 +37,15 @@ def plot2DGraph(x, y, xLabel, yLabel):
 	ylabel(yLabel)
 	return show()
 
+def computeCost(X, y, theta):
+	pass
+
+def gradientDescent(X, y, theta, alpha, num_iters):
+	pass
+
+def featureNormalize(X, n):
+	pass
+
 def run():
 	print("Hello world")
 
