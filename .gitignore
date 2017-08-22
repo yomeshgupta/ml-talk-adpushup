@@ -103,3 +103,5 @@ ENV/
 .vscode
 data/
 Notes.txt
+refine_data.py
+_main.py
