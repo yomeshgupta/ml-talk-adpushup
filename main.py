@@ -5,28 +5,29 @@ from pylab import plot, show, xlabel, ylabel
 
 def get_data():
 	# load data
-	# df = pd.read_csv('data/housing-data.txt', dtype=np.float32, header=None, names=['Size', 'Bedrooms', 'Price'])
-	# data = df.as_matrix()
-	data = np.loadtxt('data/refined_data.csv', dtype=np.float32, delimiter=",")
+	df = pd.read_csv('http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv', index_col=0)
+	data = df.as_matrix()
 
-	break_point = 188 # data break_point
+	break_point = 170 # data break_point
 	
 	# all data containing only features
-	X_all = data[:,:-1]
+	X = data[:,:-1]
 	# all outputs
-	y_all = data[:,-1:]
+	y = data[:,-1:]
 	
-	noOfFeatures = X_all.shape[1]
+	noOfFeatures = X.shape[1]
 
-	# training examples - features
-	X_train = X_all[:break_point]
-	# training examples - outputs
-	y_train = y_all[:break_point]
+	X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.85, random_state=0)
 
-	# test examples - features
-	X_test = X_all[break_point:]
-	# test examples - outputs
-	y_test = y_all[break_point:]
+	# # training examples - features
+	# X_train = X_all[:break_point]
+	# # training examples - outputs
+	# y_train = y_all[:break_point]
+
+	# # test examples - features
+	# X_test = X_all[break_point:]
+	# # test examples - outputs
+	# y_test = y_all[break_point:]
 
 	return X_train, y_train, X_test, y_test, noOfFeatures
 
@@ -100,7 +101,8 @@ def run():
 	plot2DGraph(num_iters, J_history, 'Iterations', 'Cost Function')
 
 	print(cost)
-	print(predict)
+	print(y_test[0:5])
+	print(predict[0:5])
 
 if __name__ == '__main__':
 	run()
