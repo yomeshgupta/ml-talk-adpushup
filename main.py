@@ -8,8 +8,6 @@ def get_data():
 	df = pd.read_csv('http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv', index_col=0)
 	data = df.as_matrix()
 
-	break_point = 170 # data break_point
-	
 	# all data containing only features
 	X = data[:,:-1]
 	# all outputs
