@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+data
+Notes.txt
+_main.py
+refine_data.py
+.vscode
