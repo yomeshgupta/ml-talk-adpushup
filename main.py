@@ -19,16 +19,6 @@ def get_data():
 
 	X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.85, random_state=0)
 
-	# # training examples - features
-	# X_train = X_all[:break_point]
-	# # training examples - outputs
-	# y_train = y_all[:break_point]
-
-	# # test examples - features
-	# X_test = X_all[break_point:]
-	# # test examples - outputs
-	# y_test = y_all[break_point:]
-
 	return X_train, y_train, X_test, y_test, noOfFeatures
 
 def computeCost(X, y, theta):
